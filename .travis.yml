@@ -1,5 +1,3 @@
-Travis.yml
-
 language: node_js
 node_js:
   - 14.5
