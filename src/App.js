@@ -6,6 +6,13 @@ import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
 function App() {
   return (
     <BrowserRouter>
+      <nav>
+        <Link to="/">Home</Link>
+        <Link to="/profile">Profile</Link>
+        <Link to="/welcome">Welcome</Link>
+        <Link to="/stats">Stats</Link>
+        <Link to="/balance">Balance</Link>
+      </nav>
       {/* nav bar same for all (some components change depending on logged in) */}
       <main>
         <Switch>
