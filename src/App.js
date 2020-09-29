@@ -1,7 +1,8 @@
 import React from "react";
 import "./App.css";
 import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
-import{ NavBar} from "./components/nav.js";
+import { NavBar } from "./components/nav.js";
+import Home from "./components/home.js";
 
 function App() {
   return (
@@ -11,7 +12,7 @@ function App() {
       <main>
         <Switch>
           <Route path="/" exact>
-            <h1>Home</h1>
+            <Home />
             {/* home, not logged in */}
           </Route>
           <Route path="/profile">
