@@ -6,10 +6,10 @@ node_js:
 install:
   - npm install -g codecov
   - npm ci
-addons:
-  apt:
-    packages:
-      - libgconf-2-4
+# addons:
+#   apt:
+#     packages:
+#       - libgconf-2-4
 cache:
   # Caches $HOME/.npm when npm ci is default script command
   # Caches node_modules in all other cases
