@@ -5,7 +5,7 @@ export function NavBar () {
 
     return (
         <nav>
-        {/* <img />logo */}
+        {/* <img />logo for site*/}
         <ul>
           <li>
           <Link to="/profile">Profile</Link>
