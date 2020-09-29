@@ -1,19 +1,13 @@
 import React from "react";
-import logo from "./logo.svg";
 import "./App.css";
 import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
+import{ NavBar} from "./components/nav.js";
 
 function App() {
   return (
     <BrowserRouter>
-      <nav>
-        <Link to="/">Home</Link>
-        <Link to="/profile">Profile</Link>
-        <Link to="/welcome">Welcome</Link>
-        <Link to="/stats">Stats</Link>
-        <Link to="/balance">Balance</Link>
-      </nav>
-      {/* nav bar same for all (some components change depending on logged in) */}
+      <NavBar />
+      {/* how to make Nav appear for all except Home? */}
       <main>
         <Switch>
           <Route path="/" exact>
@@ -34,7 +28,7 @@ function App() {
           <Route path="/balance">
             <h1>Balance</h1>
           </Route>
-          <Route exact>
+          <Route>
             <h1>Oops! Page not found.</h1>
             <Link to="/">Back to Home</Link>
           </Route>
