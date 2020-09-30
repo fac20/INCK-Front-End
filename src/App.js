@@ -4,6 +4,7 @@ import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
 import { NavBar } from "./components/nav.js";
 import { Balance } from "./components/balance";
 import { Home } from "./components/home";
+import { Stats } from "./components/stats";
 
 function App() {
   return (
@@ -13,11 +14,11 @@ function App() {
       <main>
         <Switch>
           <Route path="/" exact>
-            <h1>Home</h1>
+            <Home />
             {/* home, not logged in */}
           </Route>
           <Route path="/profile">
-            <h1>Profile</h1>
+            <h1>Profile</h1> cool!
           </Route>
           <Route path="/welcome">
             {/* not sure about this path,  */}
@@ -25,7 +26,7 @@ function App() {
           </Route>
           <Route path="/stats">
             {/* potentially could be integrated */}
-            <h1>Stats</h1>
+            <Stats work="50" play="50" />
           </Route>
           <Route path="/balance">
             <Balance />
