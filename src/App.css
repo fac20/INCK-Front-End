@@ -41,6 +41,9 @@ form, input, button{
   border: var(--backtwo) solid 3px;
   border-radius:20px;
 }
+button{
+  width:20rem;
+}
 
 .bluelink {
   color: var(--background);

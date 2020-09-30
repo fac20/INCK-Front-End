@@ -29,14 +29,8 @@ function App() {
             <h1>Stats</h1>
           </Route>
           <Route path="/balance">
-<<<<<<< HEAD
-            <Balance />
             <h1>Balance</h1>
-||||||| d936bdf
-            <h1>Balance</h1>
-=======
             <Balance />
->>>>>>> master
           </Route>
           <Route>
             <h1>Oops! Page not found.</h1>
