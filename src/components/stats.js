@@ -12,7 +12,7 @@ export function Stats(props) {
           radius={10}
           data={[
             { title: "work", value: parseInt(props.work), color: "#190C66" },
-            { title: "play", value: parseInt(props.play), color: "#FFDAD7" },
+            { title: "play", value: parseInt(props.play), color: "#FFFFFF" },
           ]}
         />
         ;
