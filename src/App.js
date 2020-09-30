@@ -28,6 +28,7 @@ function App() {
             <h1>Stats</h1>
           </Route>
           <Route path="/balance">
+            <h1>Balance</h1>
             <Balance />
           </Route>
           <Route>
