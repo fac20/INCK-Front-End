@@ -2,14 +2,9 @@ import React from "react";
 import "./App.css";
 import { BrowserRouter, Switch, Route, Link, } from "react-router-dom";
 import { NavBar } from "./components/nav.js";
-<<<<<<< HEAD
-import { Balance } from "./components/balance";
-import { Home } from "./components/home";
-||||||| d936bdf
 import Home from "./components/home.js";
-=======
 import { Balance } from "./components/balance";
->>>>>>> inck-3
+
 
 function App() {
   return (
@@ -34,6 +29,7 @@ function App() {
             <h1>Stats</h1>
           </Route>
           <Route path="/balance">
+            <h1>Balance</h1>
             <Balance />
           </Route>
           <Route>
