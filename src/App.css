@@ -1,48 +1,79 @@
 * {
   margin: 0;
   padding: 0;
-  background:var(--background);
+  background: var(--background);
+  font-family: "Ruda", sans-serif;
 }
 :root {
   --background: #ffdad7;
-  --backtwo: #190c66;
+  --backtwo: #0f0645;
+}
+.womanfloat {
+  width: 30rem;
+  background: transparent;
 }
 
 .homemain {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0rem;
   width: 100vw;
   height: 100vh;
   background: linear-gradient(
     to left,
-    var(--background) 50%,
-    var(--backtwo) 50%
+    var(--background) 60%,
+    var(--backtwo) 40%
   );
+  /* border: solid 3px green; */
+}
+.test {
+  width: 42rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  /* border: solid 3px red; */
+}
+
+.head1,
+.head2 {
+  width: 7rem;
+  margin: 3rem;
+  border: black 3px solid;
+}
+p {
+  border: black 3px solid;
+  width: 10rem;
+  height: 10rem;
 }
 
 .navlist {
   list-style: none;
   display: flex;
-/* 
+  justify-content: center;
+  /* 
   background: linear-gradient(
     to left,
     var(--background) 50%,
     var(--backtwo) 50%
   ); */
-  background:var(--backtwo);
+  background: var(--backtwo);
   width: 100vw;
 }
-a{
-  background:var(--backtwo);
-  color:var(--background);
+a {
+  background: var(--backtwo);
+  color: var(--background);
 }
 li {
-  margin: 3rem;
+  margin: 2rem 7rem;
 }
-form, input, button{
+form,
+input,
+button {
   border: var(--backtwo) solid 3px;
-  border-radius:20px;
+  border-radius: 20px;
 }
-button{
-  width:20rem;
+button {
+  width: 20rem;
 }
 
 .bluelink {
