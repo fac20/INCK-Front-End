@@ -11,8 +11,8 @@ export function Stats(props) {
         <PieChart
           radius={10}
           data={[
-            { title: "work", value: parseInt(props.work), color: "#E38627" },
-            { title: "play", value: parseInt(props.play), color: "#C13C37" },
+            { title: "work", value: parseInt(props.work), color: "#190C66" },
+            { title: "play", value: parseInt(props.play), color: "#FFDAD7" },
           ]}
         />
         ;
