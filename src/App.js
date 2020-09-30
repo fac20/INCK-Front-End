@@ -26,7 +26,7 @@ function App() {
           </Route>
           <Route path="/stats">
             {/* potentially could be integrated */}
-            <Stats work="20" play="80" />
+            <Stats work="20" play="80" free="10" />
           </Route>
           <Route path="/balance">
             <Balance />
