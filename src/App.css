@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  background:var(--background);
 }
 :root {
   --background: #ffdad7;
@@ -20,16 +21,25 @@
 .navlist {
   list-style: none;
   display: flex;
-
+/* 
   background: linear-gradient(
     to left,
     var(--background) 50%,
     var(--backtwo) 50%
-  );
+  ); */
+  background:var(--backtwo);
   width: 100vw;
+}
+a{
+  background:var(--backtwo);
+  color:var(--background);
 }
 li {
   margin: 3rem;
+}
+form, input, button{
+  border: var(--backtwo) solid 3px;
+  border-radius:20px;
 }
 
 .bluelink {
