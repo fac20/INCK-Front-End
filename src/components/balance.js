@@ -12,6 +12,7 @@ export const Balance = () => {
     function collectData (event){
         event.preventDefault();
         let query = event.target.elements.time.value
+        localStorage.setItem("time", query);
         // event.reset();
         // let searchParams = new URLSearchParams(location.search)
         // console.log(searchParams);

@@ -1,9 +1,10 @@
 import React from "react";
 import "./App.css";
-import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter, Switch, Route, Link, } from "react-router-dom";
 import { NavBar } from "./components/nav.js";
 import Home from "./components/home.js";
-import {Balance} from "./components/balance.js";
+import { Balance } from "./components/balance";
+
 
 function App() {
   return (
@@ -13,7 +14,7 @@ function App() {
       <main>
         <Switch>
           <Route path="/" exact>
-            <Home />
+            <h1>Home</h1>
             {/* home, not logged in */}
           </Route>
           <Route path="/profile">
@@ -28,8 +29,14 @@ function App() {
             <h1>Stats</h1>
           </Route>
           <Route path="/balance">
+<<<<<<< HEAD
             <Balance />
             <h1>Balance</h1>
+||||||| d936bdf
+            <h1>Balance</h1>
+=======
+            <Balance />
+>>>>>>> master
           </Route>
           <Route>
             <h1>Oops! Page not found.</h1>
