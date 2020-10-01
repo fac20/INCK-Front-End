@@ -1,5 +1,5 @@
 import React from "react";
-import {FormGroup, Input, Label, Placeholder} from "./../styled-components/FormDesign";
+import { FormGroup, Input, Label } from "./../styled-components/FormDesign";
 
 // import { useLocation } from "react-router-dom";
 
@@ -31,18 +31,13 @@ export const Balance = () => {
         Play
       </FormToggleButton>
       {clickWork ? (
-        
         <InputForm type="work" submit={(event) => collectData(event)} />
-        
       ) : (
         <></>
       )}
-  
-      {clickPlay ?
-      
-      <InputForm type="play" /> : <></>}
+
+      {clickPlay ? <InputForm type="play" /> : <></>}
     </div>
-    
   );
 };
 
@@ -61,7 +56,15 @@ const InputForm = (props) => {
       <Label htmlFor="time">
         {" "}
         How long did you spend on {props.type}?
-        <Input placeholdertextcolour="red"id="time" name="time" type="number" min="0" placeholder="Enter time in mins" step="5" />
+        <Input
+          placeholdertextcolour="red"
+          id="time"
+          name="time"
+          type="number"
+          min="0"
+          placeholder="Enter time in mins"
+          step="5"
+        />
       </Label>
       <input type="submit" />
     </FormGroup>

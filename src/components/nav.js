@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Logout } from "./logout"
+import { Logout } from "./logout";
 
 export function NavBar() {
   return (
@@ -27,12 +27,11 @@ export function NavBar() {
   );
 }
 
-export function LogNav () {
-
+export function LogNav() {
   return (
     <nav>
       <ul className="navlist">
-        <li>
+        <li claasName="signUpLink">
           <Link to="/signup">Sign Up</Link>
         </li>
         <li>
@@ -40,5 +39,5 @@ export function LogNav () {
         </li>
       </ul>
     </nav>
-  )
+  );
 }
