@@ -1,5 +1,5 @@
 import React from "react";
-import Form from "./../styled-components/Forms";
+import {FormGroup, Input, Label, Placeholder} from "./../styled-components/FormDesign";
 
 export const LoginForm = () => {
 
@@ -13,16 +13,16 @@ export const LoginForm = () => {
   }
 
     return (
-      <Form onSubmit={(event) => loginSubmit(event)}>
-        <label htmlFor="username">
+      <FormGroup onSubmit={(event) => loginSubmit(event)}>
+        <Label htmlFor="username">
           Username: 
-          <input id="username" name="username" type="text" max="20" onChange={event => setUsername(event.target.value)} required />
-        </label>
-        <label htmlFor="password">
+          <Input id="username" name="username" type="text" max="20" onChange={event => setUsername(event.target.value)} required />
+        </Label>
+        <Label htmlFor="password">
           Password: 
-          <input id="password" name="password" type="password" min="1"  onChange={event => setPassword(event.target.value)} required />
-        </label>
-        <input type="submit" />
-      </Form>
+          <Input id="password" name="password" type="password" min="1"  onChange={event => setPassword(event.target.value)} required />
+        </Label>
+        <Input type="submit" />
+      </FormGroup>
     );
   };
