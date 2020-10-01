@@ -1,16 +1,19 @@
 import React from "react";
 import { FormGroup, Input, Label } from "./../styled-components/FormDesign";
-// import {Link} from "react-router-dom"
+import { useHistory } from "react-router-dom";
 
 export const SignUpForm = () => {
   const [username, setUsername] = React.useState("");
   const [password, setPassword] = React.useState("");
+  const history = useHistory();
 
   const signupSubmit = (event) => {
     //setUsername(event.target.elements.username.value)
     event.preventDefault();
     event.target.reset();
     localStorage.setItem("key", "x");
+    //problem, it sends to / instead, async await had no bearing at all
+    history.push("/welcome");
   };
 
   return (

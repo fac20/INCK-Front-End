@@ -1,32 +1,31 @@
 import styled from "styled-components";
 
 export const FormGroup = styled.form`
-width:15rem;
-height:15rem; 
-display:flex;
-justify-content:center;
-align-items:center;
-flex-direction:column;
-font-weight:900;
-background:#0f0645;
-/* font-family:  */
+  width: 25rem;
+  height: 25rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-weight: 900;
+  background: #fff2f1;
+  box-shadow: 5px 10px #000426;
+  /* font-family:  */
 `;
-
-
-export const Label = styled.label `
-margin:3rem;
-color:#ffdad7;
-background:#0f0645;
-width:15rem;
-
-`
-export const Input = styled.input `
+/* // font
+//back #000426 */
+export const Label = styled.label`
+  margin: 3rem;
+  color: #000426;
+  background: #fff2f1;
+  width: 15rem;
+`;
+export const Input = styled.input`
   border: none;
-  border-bottom: 3px solid #ffdad7;
+  border-bottom: 3px solid #000426;
   margin: 1rem;
-  background:#0f0645;
-
-`
+  background: #fff2f1;
+`;
 
 // export const Placeholder = styled.TextInput.attrs({
 //     placeholderTextColor: "red"

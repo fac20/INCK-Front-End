@@ -1,14 +1,17 @@
 import React from "react";
 import { FormGroup, Input, Label } from "./../styled-components/FormDesign";
+import { useHistory } from "react-router-dom";
 
 export const LoginForm = () => {
   const [username, setUsername] = React.useState("");
   const [password, setPassword] = React.useState("");
+  const history = useHistory();
 
   const loginSubmit = (event) => {
     event.preventDefault();
     event.target.reset();
     localStorage.setItem("key", "x");
+    history.push("/welcome");
   };
 
   return (
