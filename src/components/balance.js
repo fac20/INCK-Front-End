@@ -1,4 +1,6 @@
 import React from "react";
+import {FormGroup, Input, Label, Placeholder} from "./../styled-components/FormDesign";
+
 // import { useLocation } from "react-router-dom";
 
 // on submission work form query is broken down and passed into a work array containing the numbers,
@@ -21,7 +23,7 @@ export const Balance = () => {
   }
 
   return (
-    <div>
+    <div className="balance">
       <FormToggleButton click={() => setClickWork(!clickWork)}>
         Work
       </FormToggleButton>
@@ -29,11 +31,16 @@ export const Balance = () => {
         Play
       </FormToggleButton>
       {clickWork ? (
+        
         <InputForm type="work" submit={(event) => collectData(event)} />
+        
       ) : (
         <></>
       )}
-      {clickPlay ? <InputForm type="play" /> : <></>}
+  
+      {clickPlay ?
+      
+      <InputForm type="play" /> : <></>}
     </div>
   );
 };
@@ -49,13 +56,13 @@ const FormToggleButton = (props) => {
 
 const InputForm = (props) => {
   return (
-    <form onSubmit={props.submit}>
-      <label htmlFor="time">
+    <FormGroup onSubmit={props.submit}>
+      <Label htmlFor="time">
         {" "}
         How long did you spend on {props.type}?
-        <input id="time" name="time" type="number" min="0" /> minutes
-      </label>
+        <Input placeholdertextcolour="red"id="time" name="time" type="number" min="0" placeholder="Enter time in mins" step="5" />
+      </Label>
       <input type="submit" />
-    </form>
+    </FormGroup>
   );
 };
