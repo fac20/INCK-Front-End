@@ -26,7 +26,6 @@ function App() {
         <Switch>
           <Route path="/" exact>
             <Home />
-            {/* home, not logged in */}
           </Route>
           <Route path="/profile">
             {!loggedInChecker() ? <Redirect to="/" /> : <h1>Profile</h1>}
