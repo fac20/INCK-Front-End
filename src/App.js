@@ -1,36 +1,52 @@
 import React from "react";
 import "./App.css";
-import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
-import { NavBar } from "./components/nav.js";
+import { BrowserRouter, Switch, Route, Link, Redirect } from "react-router-dom";
+import { NavBar, LogNav } from "./components/nav.js";
 import { Balance } from "./components/balance";
 import { Home } from "./components/home";
 import { Stats } from "./components/stats";
+import { SignUpForm } from "./components/signup";
+import { LoginForm } from "./components/login";
 
 function App() {
+
+  //check local storage for jwt, if true, pass true to logged in
+  const loggedInChecker = () => {
+      return localStorage.getItem('key') ? true : false;
+  }
+
+  //check if user is logged in on page load and pass that as initial state
+  const [loggedIn, setLoggedIn] = React.useState(loggedInChecker());
+
   return (
     <BrowserRouter>
-      <NavBar />
+      {loggedIn ? <NavBar /> : <LogNav />}
       {/* how to make Nav appear for all except Home? */}
       <main>
         <Switch>
           <Route path="/" exact>
             <Home />
-            {/* home, not logged in */}
           </Route>
           <Route path="/profile">
-            <h1>Profile</h1> cool!
+            {!loggedInChecker() ? <Redirect to="/" /> : <h1>Profile</h1>}
           </Route>
           <Route path="/welcome">
+            {!loggedInChecker() ? <Redirect to="/" /> : <h1>Welcome</h1>}
             {/* not sure about this path,  */}
-            <h1>Welcome</h1>
           </Route>
           <Route path="/stats">
+            {!loggedInChecker() ? <Redirect to="/" /> : <Stats work="29" play="50" />}
+
             {/* potentially could be integrated */}
-            <Stats work="29" play="50" />
           </Route>
           <Route path="/balance">
-            <h1>Balance</h1>
-            <Balance />
+            {!loggedInChecker() ? <Redirect to="/" /> : <Balance />}
+          </Route>
+          <Route path="/signup">
+            <SignUpForm />
+          </Route>
+          <Route path="/login">
+          <LoginForm />
           </Route>
           <Route>
             <h1>Oops! Page not found.</h1>

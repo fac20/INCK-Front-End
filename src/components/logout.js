@@ -1,12 +1,17 @@
 import React from "react";
+import { Link } from "react-router-dom"
 
 export function Logout() {
-    return (
-        <button 
-        className="logout"
-        // onClick= delete auth token
-        >Logout</button>
+    const removeToken = () => {
+        localStorage.removeItem('key');
+    }
 
+    return (
+        <button
+            className="logout"
+            onClick={removeToken}
+        >Logout</button>
+        
 
     )
 }

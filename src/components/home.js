@@ -20,13 +20,13 @@ export function Home() {
         <div className="test">
           <Testimonial>
             <Testimony>
-              Zenpal changed my life!!!
+              ZenPal changed my life!!!
               <Img name={head1} class={"head1"} />
             </Testimony>
           </Testimonial>
           <Testimonial>
             <Testimony>
-              I never knew i needed it until i found it !!!
+              I never knew I needed it until I found it !!!
               <Img name={head2} class={"head2"} />
             </Testimony>
           </Testimonial>

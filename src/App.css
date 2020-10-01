@@ -79,8 +79,9 @@ button {
   border: var(--backtwo) solid 3px;
   border-radius: 20px;
 } */
+
 button {
-  width: 20rem;
+  width: 5rem;
 }
 
 .bluelink {
@@ -89,6 +90,7 @@ button {
 .pinklink {
   color: var(--backtwo);
 }
+
 
 @media all and (max-width: 600px) {
   .homemain {
