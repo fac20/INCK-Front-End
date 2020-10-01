@@ -1,10 +1,14 @@
 import React from "react";
 
 export function Logout() {
+    const removeToken = () => {
+        localStorage.removeItem('key');
+    }
+
     return (
         <button 
         className="logout"
-        // onClick= delete auth token
+        onClick={removeToken}
         >Logout</button>
 
 

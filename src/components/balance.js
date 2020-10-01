@@ -35,6 +35,7 @@ export const Balance = () => {
       )}
       {clickPlay ? <InputForm type="play" /> : <></>}
     </div>
+    
   );
 };
 
