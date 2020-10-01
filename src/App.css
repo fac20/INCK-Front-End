@@ -26,12 +26,20 @@
   );
   /* border: solid 3px green; */
 }
+.balance {
+  display: flex;
+  flex-direction:column;
+  justify-content: center;
+  align-items: center;
+  width:100vw;
+   border: solid 3px green;
+}
 .test {
-  width: 42rem;
+  width: 40rem;
   display: flex;
   justify-content: center;
-  flex-direction: column;
-  /* border: solid 3px red; */
+  flex-direction: row;
+  flex-wrap:wrap;
 }
 
 .head1,
@@ -41,7 +49,6 @@
   border: black 3px solid;
 }
 p {
-  border: black 3px solid;
   width: 10rem;
   height: 10rem;
 }
@@ -66,12 +73,12 @@ a {
 li {
   margin: 2rem 7rem;
 }
-form,
+/* form,
 input,
 button {
   border: var(--backtwo) solid 3px;
   border-radius: 20px;
-}
+} */
 button {
   width: 20rem;
 }
