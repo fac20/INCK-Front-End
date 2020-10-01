@@ -23,3 +23,19 @@ export function NavBar() {
     </nav>
   );
 }
+
+export function LogNav () {
+
+  return (
+    <nav>
+      <ul className="navlist">
+        <li>
+          <Link to="/signup">Sign Up</Link>
+        </li>
+        <li>
+          <Link to="/login">Login</Link>
+        </li>
+      </ul>
+    </nav>
+  )
+}
