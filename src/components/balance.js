@@ -1,5 +1,8 @@
 import React from "react";
 import { FormGroup, Input, Label } from "./../styled-components/FormDesign";
+import { Button, BtnCont } from "./../styled-components/Button";
+import Img from "./home";
+import woman from "./woman.png";
 
 // import { useLocation } from "react-router-dom";
 
@@ -24,12 +27,15 @@ export const Balance = () => {
 
   return (
     <div className="balance">
-      <FormToggleButton click={() => setClickWork(!clickWork)}>
-        Work
-      </FormToggleButton>
-      <FormToggleButton click={() => setClickPlay(!clickPlay)}>
-        Play
-      </FormToggleButton>
+      <Img name={woman} class={"balancewoman"} />
+      <BtnCont>
+        <FormToggleButton click={() => setClickWork(!clickWork)}>
+          Work
+        </FormToggleButton>
+        <FormToggleButton click={() => setClickPlay(!clickPlay)}>
+          Play
+        </FormToggleButton>
+      </BtnCont>
       {clickWork ? (
         <InputForm type="work" submit={(event) => collectData(event)} />
       ) : (
@@ -47,7 +53,7 @@ export const Balance = () => {
 
 const FormToggleButton = (props) => {
   // option to change colours??
-  return <button onClick={props.click}>{props.children}</button>;
+  return <Button onClick={props.click}>{props.children}</Button>;
 };
 
 const InputForm = (props) => {

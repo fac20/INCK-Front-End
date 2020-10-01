@@ -4,9 +4,12 @@
   background: var(--background);
   font-family: "Ruda", sans-serif;
 }
+html {
+  width: 100vw;
+}
 :root {
   --background: #ffdad7;
-  --backtwo: #0f0645;
+  --backtwo: #000426;
 }
 .womanfloat {
   width: 30rem;
@@ -24,22 +27,20 @@
     var(--background) 60%,
     var(--backtwo) 40%
   );
-  /* border: solid 3px green; */
 }
 .balance {
   display: flex;
-  flex-direction:column;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  width:100vw;
-   border: solid 3px green;
+  width: 100vw;
 }
 .test {
   width: 40rem;
   display: flex;
   justify-content: center;
   flex-direction: row;
-  flex-wrap:wrap;
+  flex-wrap: wrap;
 }
 
 .head1,
@@ -52,11 +53,15 @@ p {
   width: 10rem;
   height: 10rem;
 }
+.logout {
+  margin: 0;
+  padding: 0;
+}
 
 .navlist {
   list-style: none;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   /* 
   background: linear-gradient(
     to left,
@@ -69,9 +74,15 @@ p {
 a {
   background: var(--backtwo);
   color: var(--background);
+  text-decoration: none;
+  text-decoration: none;
 }
 li {
-  margin: 2rem 7rem;
+  margin: 1rem 0rem 3rem 3rem;
+  padding: 0;
+
+  background: transparent;
+  /* border: solid 3px white; */
 }
 /* form,
 input,
@@ -83,6 +94,9 @@ button {
 button {
   width: 5rem;
 }
+.balancewoman {
+  width: 41rem;
+}
 
 .bluelink {
   color: var(--background);
@@ -90,8 +104,23 @@ button {
 .pinklink {
   color: var(--backtwo);
 }
-
-
+.statsmain {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.chartcontainer {
+  border: solid 3px green;
+  height: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 200px;
+}
+.piechart {
+  width: 100%;
+  height: 100%;
+}
 @media all and (max-width: 600px) {
   .homemain {
     background: linear-gradient(
