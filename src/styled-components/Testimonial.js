@@ -7,5 +7,6 @@ export default styled.div`
   height: 10rem;
   border: #0f0645 solid 3px;
   box-shadow: 5px 10px #0f0645;
-  margin: 3rem;
+  margin: 2rem;
+  margin-left: 3rem;
 `;

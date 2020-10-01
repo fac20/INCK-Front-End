@@ -5,7 +5,7 @@
   font-family: "Ruda", sans-serif;
 }
 html {
-  width: 100vw;
+  width: 100%;
 }
 :root {
   --background: #ffdad7;
@@ -24,9 +24,10 @@ html {
   height: 100vh;
   background: linear-gradient(
     to left,
-    var(--background) 60%,
-    var(--backtwo) 40%
+    var(--background) 50%,
+    var(--backtwo) 50%
   );
+  /* background: var(--background); */
 }
 .balance {
   display: flex;
@@ -123,10 +124,31 @@ button {
 }
 @media all and (max-width: 600px) {
   .homemain {
-    background: linear-gradient(
-      to bottom,
-      var(--background) 50%,
-      var(--backtwo) 50%
-    );
+    background: var(--background);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .test {
+    flex-direction: column;
+    width: 200px;
+    position: absolute;
+    top: 900px;
+  }
+  /* .womanfloat {
+    width: 200px;
+  } */
+  .homemain {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+  .navlist,
+  .homemain {
+    width: 100%;
+    /* border: green solid 7px; */
   }
 }

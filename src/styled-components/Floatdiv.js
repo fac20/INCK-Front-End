@@ -1,11 +1,21 @@
 import styled from "styled-components";
 
 export default styled.div`
-  /* border: solid 3px black; */
-  width: 35rem;
-  background: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 40rem;
+  background: #000426;
+  height: 95vh;
   top: 12rem;
   left: 0;
-  margin: 0rem 9rem 0rem 0rem;
+  margin: 0rem 0rem 0rem 0rem;
+  @media all and (max-width: 1212px) {
+    position: static;
+    width: 380px;
+  }
 `;
