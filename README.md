@@ -17,7 +17,10 @@ To recieve a visual representation of your life's equilibrium on the 'Stats' pag
 
 Click 'logout' and refresh to leave your account. 
 
-Clone our repo to see our code. In the project directory, you can run:
+Clone our repo to see our code. 
+Run `npm i` to install our dependencies.  
+
+In the project directory, you can run:
 
 ### `npm start`
 
