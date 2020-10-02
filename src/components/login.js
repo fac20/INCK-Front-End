@@ -11,6 +11,7 @@ export const LoginForm = () => {
     event.preventDefault();
     event.target.reset();
     localStorage.setItem("key", "x");
+    //problem, it doesnt check token before redirecting, so sends to "/" instead
     history.push("/welcome");
   };
 
