@@ -7,6 +7,7 @@ import { Home } from "./components/home";
 import { Stats } from "./components/stats";
 import { SignUpForm } from "./components/signup";
 import { LoginForm } from "./components/login";
+import { Welcome } from "./components/welcome";
 
 function App() {
 
@@ -31,7 +32,7 @@ function App() {
             {!loggedInChecker() ? <Redirect to="/" /> : <h1>Profile</h1>}
           </Route>
           <Route path="/welcome">
-            {!loggedInChecker() ? <Redirect to="/" /> : <h1>Welcome</h1>}
+            {!loggedInChecker() ? <Redirect to="/" /> : <Welcome />}
             {/* not sure about this path,  */}
           </Route>
           <Route path="/stats">
