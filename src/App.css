@@ -1,4 +1,5 @@
-* {
+*,
+:root {
   margin: 0;
   padding: 0;
   background: var(--background);
@@ -9,7 +10,7 @@ html {
 }
 :root {
   --background: #ffdad7;
-  --backtwo: #000426;
+  --backtwo: #090426;
 }
 .womanfloat {
   width: 30rem;
@@ -18,16 +19,8 @@ html {
 
 .homemain {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   margin: 0rem;
-  width: 100vw;
-  height: 100vh;
-  background: linear-gradient(
-    to left,
-    var(--background) 50%,
-    var(--backtwo) 50%
-  );
-  /* background: var(--background); */
 }
 .balance {
   display: flex;
@@ -37,7 +30,7 @@ html {
   width: 100vw;
 }
 .test {
-  width: 40rem;
+  width: 50rem;
   display: flex;
   justify-content: center;
   flex-direction: row;
@@ -59,6 +52,7 @@ html {
   list-style: none;
   display: flex;
   justify-content: space-around;
+  width: 100%;
   /* 
   background: linear-gradient(
     to left,
@@ -66,7 +60,6 @@ html {
     var(--backtwo) 50%
   ); */
   background: var(--backtwo);
-  width: 100vw;
 }
 a {
   background: var(--backtwo);
@@ -81,12 +74,6 @@ li {
   background: transparent;
   /* border: solid 3px white; */
 }
-/* form,
-input,
-button {
-  border: var(--backtwo) solid 3px;
-  border-radius: 20px;
-} */
 
 button {
   width: 5rem;
@@ -108,11 +95,13 @@ button {
   align-items: center;
 }
 .chartcontainer {
-  border: solid 3px green;
-  height: 200px;
-  margin-left: auto;
-  margin-right: auto;
-  width: 200px;
+  /* border: solid 3px green; */
+  height: 400px;
+  /* margin-left: auto;
+  margin-right: auto; */
+  width: 400px;
+  border-radius: 50%;
+  padding: 0;
 }
 .piechart {
   width: 100%;
@@ -142,7 +131,7 @@ button {
     flex-wrap: wrap;
     flex-direction: column;
   }
-  .navlist,
+
   .homemain {
     width: 100%;
     /* border: green solid 7px; */
@@ -152,6 +141,6 @@ button {
 @media only screen and (min-width: 768px) {
   main {
     max-width: 80vw;
-    margin: auto;
+    /* margin: auto; */
   }
 }

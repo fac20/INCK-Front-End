@@ -1,11 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Logout } from "./logout";
-
+import Navbar from "./../styled-components/Navbar";
 
 export function NavBar(props) {
   return (
-    <nav>
+    <Navbar>
       {/* <img />logo for site*/}
       <ul className="navlist">
         <li className="pinklink">
@@ -21,10 +21,10 @@ export function NavBar(props) {
           <Link to="/balance">Balance</Link>
         </li>
         <li>
-          <Logout loggedInChecker={props.loggedInChecker}/>
+          <Logout loggedInChecker={props.loggedInChecker} />
         </li>
       </ul>
-    </nav>
+    </Navbar>
   );
 }
 
