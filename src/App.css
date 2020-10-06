@@ -51,10 +51,6 @@ html {
   margin: 3rem;
   border: black 3px solid;
 }
-p {
-  width: 10rem;
-  height: 10rem;
-}
 .logout {
   margin: 0;
   padding: 0;
@@ -151,5 +147,12 @@ button {
   .homemain {
     width: 100%;
     /* border: green solid 7px; */
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  main {
+    max-width: 80vw;
+    margin: auto;
   }
 }

@@ -2,7 +2,7 @@ import React from "react";
 import { FormGroup, Input, Label } from "./../styled-components/FormDesign";
 import { useHistory } from "react-router-dom";
 
-export const SignUpForm = () => {
+export const SignUpForm = ({loggedInChecker}) => {
   const [username, setUsername] = React.useState("");
   const [password, setPassword] = React.useState("");
   const history = useHistory();
@@ -12,7 +12,7 @@ export const SignUpForm = () => {
     event.preventDefault();
     event.target.reset();
     localStorage.setItem("key", "x");
-    //problem, it sends to / instead, async await had no bearing at all
+    loggedInChecker();
     history.push("/welcome");
   };
 

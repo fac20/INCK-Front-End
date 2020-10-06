@@ -2,7 +2,7 @@ import React from "react";
 import { FormGroup, Input, Label } from "./../styled-components/FormDesign";
 import { useHistory } from "react-router-dom";
 
-export const LoginForm = () => {
+export const LoginForm = (props) => {
   const [username, setUsername] = React.useState("");
   const [password, setPassword] = React.useState("");
   const history = useHistory();
@@ -11,7 +11,7 @@ export const LoginForm = () => {
     event.preventDefault();
     event.target.reset();
     localStorage.setItem("key", "x");
-    //problem, it doesnt check token before redirecting, so sends to "/" instead
+    props.loggedInChecker();
     history.push("/welcome");
   };
 
