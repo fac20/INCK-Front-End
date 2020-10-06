@@ -16,6 +16,6 @@ export default styled.div`
   margin: 0rem 0rem 0rem 0rem;
   @media all and (max-width: 1212px) {
     position: static;
-    width: 380px;
+    width: 500px;
   }
 `;
