@@ -11,7 +11,7 @@ export function Logout(props) {
   };
 
   return (
-    <Button className="logout" onClick={removeToken}>
+    <Button className="logout" onClick={removeToken} >
       Logout
     </Button>
   );

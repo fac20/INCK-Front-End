@@ -12,7 +12,6 @@ export const LoginForm = (props) => {
     event.target.reset();
     localStorage.setItem("key", "x");
     props.loggedInChecker();
-    //problem, it doesnt check token before redirecting, so sends to "/" instead
     history.push("/welcome");
   };
 

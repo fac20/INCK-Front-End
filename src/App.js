@@ -26,7 +26,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      {loggedIn ? <NavBar /> : <LogNav />}
+      {loggedIn ? <NavBar loggedInChecker={loggedInChecker} /> : <LogNav />}
       {/* how to make Nav appear for all except Home? */}
       <main>
         <Switch>
