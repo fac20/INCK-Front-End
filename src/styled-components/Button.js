@@ -6,7 +6,6 @@ export const Button = styled.button`
   color: #ffdad7;
   border-radius: 1px;
   box-shadow: 5px 10px #fff2f2;
-  margin: 3rem;
 `;
 
 export const BtnCont = styled.div`

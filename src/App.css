@@ -3,9 +3,10 @@
   padding: 0;
   background: var(--background);
   font-family: "Ruda", sans-serif;
+  box-sizing: border-box;
 }
 html {
-  width: 100%;
+  width: 100vw;
 }
 :root {
   --background: #ffdad7;
