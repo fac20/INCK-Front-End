@@ -1,14 +1,12 @@
 import React from "react";
-import { useHistory, useLocation } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { Button } from "./../styled-components/Button";
 
-export function Logout() {
+export function Logout(props) {
   const history = useHistory();
-  const location = useLocation();
   const removeToken = () => {
     localStorage.removeItem("key");
-    //issue, it doesnt check key before redirecting.
-    console.log(location.pathname);
+    props.loggedInChecker();
     history.push("/");
   };
 

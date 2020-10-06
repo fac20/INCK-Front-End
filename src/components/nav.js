@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Logout } from "./logout";
 
-export function NavBar() {
+export function NavBar(props) {
   return (
     <nav>
       {/* <img />logo for site*/}
@@ -20,7 +20,7 @@ export function NavBar() {
           <Link to="/balance">Balance</Link>
         </li>
         <li>
-          <Logout />
+          <Logout loggedInChecker={props.loggedInChecker}/>
         </li>
       </ul>
     </nav>

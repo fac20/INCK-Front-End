@@ -10,14 +10,19 @@ import { LoginForm } from "./components/login";
 import { Welcome } from "./components/welcome";
 
 function App() {
+  
+
+  //check if user is logged in on page load and pass that as initial state
+  const [loggedIn, setLoggedIn] = React.useState(localStorage.getItem('key') ? true: false);
 
   //check local storage for jwt, if true, pass true to logged in
   const loggedInChecker = () => {
-      return localStorage.getItem('key') ? true : false;
-  }
-
-  //check if user is logged in on page load and pass that as initial state
-  const [loggedIn, setLoggedIn] = React.useState(loggedInChecker());
+    if (localStorage.getItem('key')) {
+      setLoggedIn(true);
+    } else {
+      setLoggedIn(false);
+    }
+}
 
   return (
     <BrowserRouter>
@@ -29,25 +34,25 @@ function App() {
             <Home />
           </Route>
           <Route path="/profile">
-            {!loggedInChecker() ? <Redirect to="/" /> : <h1>Profile</h1>}
+            {!loggedIn ? <Redirect to="/" /> : <h1>Profile</h1>}
           </Route>
           <Route path="/welcome">
-            {!loggedInChecker() ? <Redirect to="/" /> : <Welcome />}
+            {!loggedIn ? <Redirect to="/" /> : <Welcome />}
             {/* not sure about this path,  */}
           </Route>
           <Route path="/stats">
-            {!loggedInChecker() ? <Redirect to="/" /> : <Stats work="29" play="50" />}
+            {!loggedIn ? <Redirect to="/" /> : <Stats work="29" play="50" />}
 
             {/* potentially could be integrated */}
           </Route>
           <Route path="/balance">
-            {!loggedInChecker() ? <Redirect to="/" /> : <Balance />}
+            {!loggedIn ? <Redirect to="/" /> : <Balance />}
           </Route>
           <Route path="/signup">
-            <SignUpForm />
+            <SignUpForm loggedInChecker={loggedInChecker}/>
           </Route>
           <Route path="/login">
-          <LoginForm />
+          <LoginForm loggedInChecker={loggedInChecker} />
           </Route>
           <Route>
             <h1>Oops! Page not found.</h1>
