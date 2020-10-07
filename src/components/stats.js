@@ -14,7 +14,7 @@ export function Stats(props) {
         <section className="chartcontainer">
           <PieChart
             className="piechart"
-            radius={10}
+            radius={50}
             data={[
               { title: "work", value: parseInt(props.work), color: "#190C66" },
               { title: "play", value: parseInt(props.play), color: "#FFFFFF" },
