@@ -6,12 +6,7 @@ export const Button = styled.button`
   color: #ffdad7;
   border-radius: 1px;
   box-shadow: 5px 10px #fff2f2;
-<<<<<<< HEAD
-||||||| 24e57fb
-  margin: 3rem;
-=======
   /* margin: 3rem; */
->>>>>>> master
 `;
 
 export const BtnCont = styled.div`
