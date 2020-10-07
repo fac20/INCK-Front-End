@@ -18,7 +18,7 @@ function App() {
 
   //check local storage for jwt, if true, pass true to logged in
   const loggedInChecker = () => {
-    if (localStorage.getItem("key")) {
+    if (localStorage.getItem("access_token")) {
       setLoggedIn(true);
     } else {
       setLoggedIn(false);
