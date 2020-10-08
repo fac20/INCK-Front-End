@@ -32,7 +32,7 @@ export function LogNav() {
   return (
     <nav>
       <ul className="navlist">
-        <li claasName="signUpLink">
+        <li className="signUpLink">
           <Link to="/signup">Sign Up</Link>
         </li>
         <li>
