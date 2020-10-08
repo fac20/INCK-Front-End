@@ -1,8 +1,22 @@
 import React from "react";
 import { PieChart } from "react-minimal-pie-chart";
 import { Fade } from "./../styled-components/Fade";
+import { useState, useEffect } from "react";
+
+// useeffect to store fetch request
+// calling the api for some data
+// recieving the data, check the response and then pass it on the other functions.
 
 export function Stats(props) {
+  const url = "https://zenpal.herokuapp.com/play";
+
+  const [time, setTime] = useState(0);
+
+  useEffect(() => {
+    fetch(url)
+      .then((res) => res.json)
+      .then((res) => setTime(res));
+  }, []);
   return (
     <>
       <section className="statsmain">
