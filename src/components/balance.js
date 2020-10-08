@@ -1,6 +1,7 @@
 import React from "react";
 import { FormGroup, Input, Label } from "./../styled-components/FormDesign";
 import { Button, BtnCont } from "./../styled-components/Button";
+import RowDiv from "./../styled-components/RowDiv";
 import Img from "./home";
 import woman from "./woman.png";
 
@@ -36,13 +37,15 @@ export const Balance = () => {
           Play
         </FormToggleButton>
       </BtnCont>
-      {clickWork ? (
-        <InputForm type="work" submit={(event) => collectData(event)} />
-      ) : (
-        <></>
-      )}
+      <RowDiv>
+        {clickWork ? (
+          <InputForm type="work" submit={(event) => collectData(event)} />
+        ) : (
+          <></>
+        )}
 
-      {clickPlay ? <InputForm type="play" /> : <></>}
+        {clickPlay ? <InputForm type="play" /> : <></>}
+      </RowDiv>
     </div>
   );
 };

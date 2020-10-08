@@ -7,44 +7,51 @@ export const LoginForm = (props) => {
   const [password, setPassword] = React.useState("");
   const history = useHistory();
 
-  const url = "https://zenpal.herokuapp.com/login"
+  const url = "https://zenpal.herokuapp.com/login";
 
   const checkResponse = (response) => {
-    if (!response.ok) throw new Error(`Network error: ${response.status}`);
-    console.log(response.json())
+    if (!response.ok) {
+      console.log(response.json());
+      console.log(`Error with the request! ${response.status}`);
+      return;
+    }
     return response.json();
   };
-  
+
   const sendLogin = (username, password) => {
+    //what is acutally being returned here?
+    //checkResponse should be returning a jsonified body if all is ok
+
     return fetch(url, {
-      method: "POST", 
-      mode: "no-cors",
-      body: JSON.stringify({username, password}),
-      headers: { "content-type" : "application/json"}
-    }).then(checkResponse);
+      method: "POST",
+      body: JSON.stringify({ username, password }),
+      headers: { "content-type": "application/json" },
+    })
+      .then(checkResponse)
+      .catch((err) => {
+        throw new Error("Fetch failed");
+      });
   };
 
   const loginSubmit = (event) => {
     event.preventDefault();
 
     //pull out information from form
-    const username = event.target.elements.username.value;
-    const password = event.target.password.value;
+    const usernameValue = event.target.elements.username.value;
+    const passwordValue = event.target.password.value;
 
-    //send to back end 
-    sendLogin(username, password)
-    .then(response => {
-      //set access token in local storage once we know what it's called!
+    //send to back end
+    sendLogin(usernameValue, passwordValue).then((response) => {
+      //set access token in local storage
       localStorage.setItem("access_token", response.access_token);
     });
-  
+
     event.target.reset();
-    
+
     props.loggedInChecker();
     history.push("/welcome");
   };
 
-  
   // On login send a post request to the sever /login
   // fetch username via api then convert json data.
   // give user a JWT and store local for x amount of time

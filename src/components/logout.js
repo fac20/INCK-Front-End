@@ -11,7 +11,10 @@ export function Logout(props) {
   };
 
   return (
-    <Button className="logout" onClick={removeToken} >
+    <Button
+      className="logout"
+      onClick={removeToken}
+      boxShadow="3px 5px #fff2f2">
       Logout
     </Button>
   );
