@@ -1,8 +1,34 @@
 import React from "react";
 import { PieChart } from "react-minimal-pie-chart";
 import { Fade } from "./../styled-components/Fade";
+import { useState, useEffect } from "react";
+
+function getStats() {
+  //  const arr = []
+
+  const url = "https://git.heroku.com/zenpal.git/";
+
+  useEffect(() => {
+    return fetch(url)
+      .then((res) => res.json)
+      .then((res) => console.log(res))
+      .catch((error) => error);
+  }, []);
+}
+getStats();
 
 export function Stats(props) {
+  // //  const arr = []
+
+  // const url = "https://git.heroku.com/zenpal.git";
+
+  // useEffect(() => {
+  //   return fetch(url)
+  //     .then((res) => res.json)
+  //     .then((res) => console.log(res))
+  //     .catch((error) => error);
+  // }, []);
+
   return (
     <>
       <section className="statsmain">
