@@ -15,15 +15,42 @@ export const Balance = () => {
   const [clickPlay, setClickPlay] = React.useState(false);
   const [clickWork, setClickWork] = React.useState(false);
   // const location = useLocation();
-  function collectData(event) {
+
+  function collectPlayData(event) {
     event.preventDefault();
-    let query = event.target.elements.time.value;
-    localStorage.setItem("time", query);
-    // event.reset();
-    // let searchParams = new URLSearchParams(location.search)
-    // console.log(searchParams);
-    // const query = searchParams.get("time");
-    console.log(query);
+    event.target.reset();
+
+    //url
+    const url = "https://zenpal.herokuapp.com/post-play";
+
+    //pull out the data from the form
+    console.log(event);
+    let time = event.target.elements.time.value;
+    let dateTime = new Date();
+    console.log(time, "date:", dateTime);
+
+    //authenticate will find user ID on backend to link
+
+    const checkResponse = (response) => {
+      if (!response.ok) {
+        console.error(`Error with the request! ${response.status}`);
+        return response.status;
+      }
+      return response;
+    };
+
+    //500 internal server
+    function sendPlay(time, dateTime) {
+      return fetch(url, {
+        method: "POST",
+        body: JSON.stringify({ time, dateTime }),
+        headers: { "content-type": "application/json" },
+      })
+        .then(checkResponse)
+        .catch((err) => {
+          throw new Error("Error with submission of play time");
+        });
+    }
   }
 
   return (
@@ -39,12 +66,16 @@ export const Balance = () => {
       </BtnCont>
       <RowDiv>
         {clickWork ? (
-          <InputForm type="work" submit={(event) => collectData(event)} />
+          <InputForm type="work" submit={(event) => collectPlayData(event)} />
         ) : (
           <></>
         )}
 
-        {clickPlay ? <InputForm type="play" /> : <></>}
+        {clickPlay ? (
+          <InputForm type="play" submit={(event) => collectPlayData(event)} />
+        ) : (
+          <></>
+        )}
       </RowDiv>
     </div>
   );

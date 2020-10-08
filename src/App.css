@@ -44,9 +44,9 @@ html {
   flex-direction: row;
   flex-wrap: wrap;
 }
-input {
+/* input {
   margin: 3rem;
-}
+} */
 
 .head1,
 .head2 {
