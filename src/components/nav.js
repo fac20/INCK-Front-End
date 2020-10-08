@@ -13,10 +13,10 @@ export function NavBar(props) {
           <Link to="/">Home</Link>
         </li>
         <li className="pinklink">
-          <Link to="/profile">Profile</Link>
+          <Link to="/welcome">About</Link>
         </li>
         <li className="pinklink">
-          <Link to="/welcome">About</Link>
+          <Link to="/profile">Profile</Link>
         </li>
         <li className="bluelink">
           <Link to="/stats">Stats</Link>

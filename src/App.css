@@ -19,11 +19,16 @@ html {
 }
 
 .homemain,
-.main {
+.main,
+.about {
   display: flex;
   justify-content: center;
+  align-items: center;
   margin: 0rem;
   padding: 0;
+}
+.about {
+  flex-direction: column;
 }
 .balance {
   display: flex;
@@ -38,6 +43,9 @@ html {
   justify-content: center;
   flex-direction: row;
   flex-wrap: wrap;
+}
+input {
+  margin: 3rem;
 }
 
 .head1,

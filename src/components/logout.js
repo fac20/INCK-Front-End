@@ -5,7 +5,7 @@ import { Button } from "./../styled-components/Button";
 export function Logout(props) {
   const history = useHistory();
   const removeToken = () => {
-    localStorage.removeItem("key");
+    localStorage.removeItem("access_token");
     props.loggedInChecker();
     history.push("/");
   };

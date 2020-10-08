@@ -11,17 +11,13 @@ export const LoginForm = (props) => {
 
   const checkResponse = (response) => {
     if (!response.ok) {
-      console.log(response.json());
-      console.log(`Error with the request! ${response.status}`);
+      console.error(`Error with the request! ${response.status}`);
       return;
     }
     return response.json();
   };
 
   const sendLogin = (username, password) => {
-    //what is acutally being returned here?
-    //checkResponse should be returning a jsonified body if all is ok
-
     return fetch(url, {
       method: "POST",
       body: JSON.stringify({ username, password }),
@@ -29,7 +25,7 @@ export const LoginForm = (props) => {
     })
       .then(checkResponse)
       .catch((err) => {
-        throw new Error("Fetch failed");
+        throw new Error("Login fetch failed");
       });
   };
 
