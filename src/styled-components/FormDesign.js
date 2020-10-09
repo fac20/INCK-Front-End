@@ -10,6 +10,7 @@ export const FormGroup = styled.form`
   font-weight: 900;
   background: #fff2f1;
   box-shadow: 5px 10px #000426;
+  margin: 3rem;
   /* font-family:  */
 `;
 /* // font

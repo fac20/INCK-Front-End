@@ -2,18 +2,55 @@ import React from "react";
 import { FormGroup, Input, Label } from "./../styled-components/FormDesign";
 import { useHistory } from "react-router-dom";
 
-export const SignUpForm = ({loggedInChecker}) => {
+export const SignUpForm = ({ loggedInChecker }) => {
   const [username, setUsername] = React.useState("");
   const [password, setPassword] = React.useState("");
   const history = useHistory();
 
+  const url = "https://zenpal.herokuapp.com/signup";
+
   const signupSubmit = (event) => {
-    //setUsername(event.target.elements.username.value)
     event.preventDefault();
-    event.target.reset();
-    localStorage.setItem("key", "x");
-    loggedInChecker();
-    history.push("/welcome");
+
+    const checkResponse = (response) => {
+      if (!response.ok) {
+        console.error(`Error with the request! ${response.status}`);
+        return response.status;
+      }
+      return response.json();
+    };
+
+    const sendSignup = (username, password) => {
+      return fetch(url, {
+        method: "POST",
+        body: JSON.stringify({ username, password }),
+        headers: { "content-type": "application/json" },
+      })
+        .then(checkResponse)
+        .catch((err) => {
+          throw new Error("Signup fetch failed");
+        });
+    };
+
+    //send username and password to be checked by database
+    const usernameValue = event.target.elements.username.value;
+    const passwordValue = event.target.password.value;
+
+    sendSignup(usernameValue, passwordValue).then((response) => {
+      if (response === 409) {
+        //if response is 409-you don't get a status- render error response to page
+        //try again
+        console.error("username taken");
+      } else {
+        //iresponse must be 201
+        //log them in
+        localStorage.setItem("access_token", response.access_token);
+        //access token is coming back undefined because it is not jsonified!
+        //need to work out how to access the token!
+        loggedInChecker();
+        history.push("/welcome");
+      }
+    });
   };
 
   return (

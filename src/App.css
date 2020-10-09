@@ -18,11 +18,17 @@ html {
   background: transparent;
 }
 
-.homemain, .main {
+.homemain,
+.main,
+.about {
   display: flex;
   justify-content: center;
+  align-items: center;
   margin: 0rem;
-  padding:0;
+  padding: 0;
+}
+.about {
+  flex-direction: column;
 }
 .balance {
   display: flex;
@@ -38,6 +44,9 @@ html {
   flex-direction: row;
   flex-wrap: wrap;
 }
+/* input {
+  margin: 3rem;
+} */
 
 .head1,
 .head2 {
@@ -49,7 +58,6 @@ html {
   margin: 0;
   padding: 0;
 }
-
 
 .navlist {
   list-style: none;
@@ -68,14 +76,13 @@ li {
   margin: 1rem 0rem 3rem 3rem;
   padding: 0;
   background: transparent;
- 
 }
 
 button {
   width: 5rem;
 }
 .balancewoman {
-  width: 41rem;
+  width: 39rem;
 }
 
 .bluelink {
@@ -116,20 +123,19 @@ button {
 } */
 
 @media only screen and (max-width: 1000px) {
-.test{
-  max-width:40rem;
-}
+  .test {
+    max-width: 40rem;
+  }
 }
 
 @media only screen and (max-width: 434px) {
- 
-  .homemain{
+  .homemain {
     background: var(--background);
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    overflow-x:hidden;
+    overflow-x: hidden;
     width: 100vw;
     flex-wrap: wrap;
   }
@@ -139,19 +145,18 @@ button {
     position: absolute;
     top: 1000px;
     justify-content: center;
-    align-items:center;
+    align-items: center;
   }
-  .navlist{
-    font-size:10px;
-    flex-wrap:wrap;
+  .navlist {
+    font-size: 10px;
+    flex-wrap: wrap;
     justify-content: center;
-    align-items:center;
-    width:100px;
+    align-items: center;
+    width: 100px;
   }
-  nav{
+  nav {
     display: flex;
     justify-content: flex-start;
-    align-items:flex-start;
+    align-items: flex-start;
   }
- 
 }

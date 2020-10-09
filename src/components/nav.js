@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Logout } from "./logout";
 import Navbar from "./../styled-components/Navbar";
+import Img from "./home";
 
 export function NavBar(props) {
   return (
@@ -9,10 +10,13 @@ export function NavBar(props) {
       {/* <img />logo for site*/}
       <ul className="navlist">
         <li className="pinklink">
-          <Link to="/profile">Profile</Link>
+          <Link to="/">Home</Link>
         </li>
         <li className="pinklink">
-          <Link to="/welcome">Welcome</Link>
+          <Link to="/welcome">About</Link>
+        </li>
+        <li className="pinklink">
+          <Link to="/profile">Profile</Link>
         </li>
         <li className="bluelink">
           <Link to="/stats">Stats</Link>
