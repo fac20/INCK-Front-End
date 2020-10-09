@@ -35,7 +35,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 Launches the test runner in the interactive watch mode.<br />
 
-Enjoy our app and look out for new developments next week!
+Enjoy our app and look out for new developments soon!
 
 
 
