@@ -17,7 +17,7 @@ export const SignUpForm = ({ loggedInChecker }) => {
         console.error(`Error with the request! ${response.status}`);
         return response.status;
       }
-      return response;
+      return response.json();
     };
 
     const sendSignup = (username, password) => {
@@ -37,18 +37,18 @@ export const SignUpForm = ({ loggedInChecker }) => {
     const passwordValue = event.target.password.value;
 
     sendSignup(usernameValue, passwordValue).then((response) => {
-      if (response.status === 201) {
-        //if response is 201, reset form
+      if (response === 409) {
+        //if response is 409-you don't get a status- render error response to page
+        //try again
+        console.error("username taken");
+      } else {
+        //iresponse must be 201
         //log them in
         localStorage.setItem("access_token", response.access_token);
         //access token is coming back undefined because it is not jsonified!
         //need to work out how to access the token!
         loggedInChecker();
         history.push("/welcome");
-      } else if (response === 409) {
-        //if response is 409-you don't get a status- render error response to page
-        //try again
-        console.log("username taken");
       }
     });
   };
